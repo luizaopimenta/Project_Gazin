@@ -1,0 +1,47 @@
+
+services:
+  pgsql:
+    container_name: 
+      postgres
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: gazindb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    container_name: 
+      backend
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/var/www/html
+    depends_on:
+      - pgsql
+    environment:
+      DB_HOST: pgsql
+      DB_USERNAME: root
+      DB_PASSWORD: root
+      DB_DATABASE: gazindb
+    command: php artisan serve --host=0.0.0.0 --port=8000
+
+  frontend:
+    container_name: 
+      frontend
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/src:/app/src
+    depends_on:
+      - backend
+    environment:
+      REACT_APP_API_URL: http://backend:8000
+
+volumes:
+  pgdata:
