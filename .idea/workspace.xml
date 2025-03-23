@@ -5,124 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bda512a6-8f61-4cd8-add7-76b37571abfd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.phpunit.result.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Console/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Exceptions/Handler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/DesenvolvedorController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/NivelController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Middleware/PreventRequestsDuringMaintenance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Middleware/TrimStrings.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Middleware/TrustHosts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Middleware/TrustProxies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Middleware/ValidateSignature.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Http/Resources/DesenvolvedorResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Models/Desenvolvedor.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Models/Nivel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Validate/DesenvolvedorValidate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/Validate/NivelValidate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/artisan" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/bootstrap/app.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/bootstrap/cache/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/app.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/broadcasting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/cache.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/cors.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/filesystems.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/hashing.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/logging.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/mail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/queue.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/sanctum.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/services.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/session.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/config/view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/database/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/database/factories/DesenvolvedorFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/database/factories/NivelFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/database/factories/UserFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/database/migrations/2025_03_21_004156_create_table_niveis.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/database/migrations/2025_03_21_010636_create_table_desenvolvedores.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/lang/en/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/lang/en/pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/lang/en/passwords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/lang/en/validation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/resources/css/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/resources/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/resources/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/resources/views/welcome.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/routes/channels.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/routes/console.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/routes/web.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/storage/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/storage/app/public/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/storage/framework/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/storage/framework/cache/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/storage/framework/cache/data/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/storage/framework/sessions/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/storage/framework/testing/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/storage/framework/views/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/storage/logs/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/CreatesApplication.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/Feature/Desenvolvedores/ApagarDesenvolvedorTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/Feature/Desenvolvedores/AtualizarDesenvolvedorTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/Feature/Desenvolvedores/CadastrarDesenvolvedorTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/Feature/Desenvolvedores/ListarDesenvolvedorTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/Feature/Nivel/ApagarNivelTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/Feature/Nivel/AtualizarNivelTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/Feature/Nivel/CadastrarNivelTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/Feature/Nivel/ListarNivelTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/Pest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/tests/TestCase.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/vite.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/reportWebVitals.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/NivelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/NivelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/vendor/swagger-api/swagger-ui/test/e2e-cypress/static/documents/bugs/5043/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/vendor/swagger-api/swagger-ui/test/e2e-cypress/static/documents/bugs/5043/swagger.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1742758606494</updated>
-      <workItem from="1742758607876" duration="1349000" />
+      <workItem from="1742758607876" duration="1741000" />
     </task>
     <servers />
   </component>

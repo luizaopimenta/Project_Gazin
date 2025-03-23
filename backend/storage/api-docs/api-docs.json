@@ -1,0 +1,705 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Gazin",
+        "description": "Documentação da API Gazin. Esta API gerencia níveis e desenvolvedores.",
+        "contact": {
+            "email": "lfp_costa@hotmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/desenvolvedores": {
+            "get": {
+                "tags": [
+                    "Desenvolvedores"
+                ],
+                "summary": "Lista os desenvolvedores com paginação e busca.",
+                "description": "Retorna uma lista de desenvolvedores com suporte a paginação e busca por termo no campo 'nome'.",
+                "operationId": "4c4478bb4ffac6cb911aa4a3ef26bb03",
+                "parameters": [
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "Número de itens por página.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 5
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Termo de busca para filtrar os desenvolvedores pelo campo 'nome'.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista de desenvolvedores retornada com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "description": "ID do desenvolvedor.",
+                                                        "type": "integer"
+                                                    },
+                                                    "nome": {
+                                                        "description": "Nome do desenvolvedor.",
+                                                        "type": "string"
+                                                    },
+                                                    "nivel_id": {
+                                                        "description": "ID do nível associado.",
+                                                        "type": "integer"
+                                                    },
+                                                    "sexo": {
+                                                        "description": "Sexo do desenvolvedor.",
+                                                        "type": "string"
+                                                    },
+                                                    "data_nascimento": {
+                                                        "description": "Data de nascimento do desenvolvedor.",
+                                                        "type": "string",
+                                                        "format": "date"
+                                                    },
+                                                    "hobby": {
+                                                        "description": "Hobby do desenvolvedor.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "meta": {
+                                            "properties": {
+                                                "total": {
+                                                    "description": "Total de registros encontrados.",
+                                                    "type": "integer"
+                                                },
+                                                "current_page": {
+                                                    "description": "Página atual.",
+                                                    "type": "integer"
+                                                },
+                                                "per_page": {
+                                                    "description": "Número de itens por página.",
+                                                    "type": "integer"
+                                                },
+                                                "last_page": {
+                                                    "description": "Última página disponível.",
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Nenhum registro encontrado.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Nenhum registro encontrado."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Desenvolvedores"
+                ],
+                "summary": "Cria um novo desenvolvedor.",
+                "description": "Cria um novo registro de desenvolvedor com base nos dados fornecidos.",
+                "operationId": "a3bdbd42c682a13deeed7e8ff58fa929",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nivel_id": {
+                                        "description": "ID do nível associado.",
+                                        "type": "integer"
+                                    },
+                                    "nome": {
+                                        "description": "Nome do desenvolvedor.",
+                                        "type": "string"
+                                    },
+                                    "sexo": {
+                                        "description": "Sexo do desenvolvedor.",
+                                        "type": "string"
+                                    },
+                                    "data_nascimento": {
+                                        "description": "Data de nascimento do desenvolvedor.",
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "hobby": {
+                                        "description": "Hobby do desenvolvedor.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Desenvolvedor criado com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "description": "ID do desenvolvedor criado.",
+                                                    "type": "integer"
+                                                },
+                                                "nivel_id": {
+                                                    "description": "ID do nível associado.",
+                                                    "type": "integer"
+                                                },
+                                                "nome": {
+                                                    "description": "Nome do desenvolvedor.",
+                                                    "type": "string"
+                                                },
+                                                "sexo": {
+                                                    "description": "Sexo do desenvolvedor.",
+                                                    "type": "string"
+                                                },
+                                                "data_nascimento": {
+                                                    "description": "Data de nascimento do desenvolvedor.",
+                                                    "type": "string",
+                                                    "format": "date"
+                                                },
+                                                "hobby": {
+                                                    "description": "Hobby do desenvolvedor.",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "É necessário haver um nível cadastrado.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Não é possível cadastrar desenvolvedor. Não existem níveis cadastrados."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/desenvolvedores/{id}": {
+            "put": {
+                "tags": [
+                    "Desenvolvedores"
+                ],
+                "summary": "Atualiza um desenvolvedor existente.",
+                "description": "Atualiza os dados de um desenvolvedor com base no ID fornecido.",
+                "operationId": "579346e77f0604bf0209d32f045f5fc4",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do desenvolvedor a ser atualizado.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nivel_id": {
+                                        "description": "ID do nível associado.",
+                                        "type": "integer"
+                                    },
+                                    "nome": {
+                                        "description": "Nome do desenvolvedor.",
+                                        "type": "string"
+                                    },
+                                    "sexo": {
+                                        "description": "Sexo do desenvolvedor.",
+                                        "type": "string"
+                                    },
+                                    "data_nascimento": {
+                                        "description": "Data de nascimento do desenvolvedor.",
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "hobby": {
+                                        "description": "Hobby do desenvolvedor.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Desenvolvedor atualizado com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "description": "ID do desenvolvedor atualizado.",
+                                                    "type": "integer"
+                                                },
+                                                "nivel_id": {
+                                                    "description": "ID do nível associado.",
+                                                    "type": "integer"
+                                                },
+                                                "nome": {
+                                                    "description": "Nome do desenvolvedor.",
+                                                    "type": "string"
+                                                },
+                                                "sexo": {
+                                                    "description": "Sexo do desenvolvedor.",
+                                                    "type": "string"
+                                                },
+                                                "data_nascimento": {
+                                                    "description": "Data de nascimento do desenvolvedor.",
+                                                    "type": "string",
+                                                    "format": "date"
+                                                },
+                                                "hobby": {
+                                                    "description": "Hobby do desenvolvedor.",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "É necessário haver um nível cadastrado.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Não é possível cadastrar desenvolvedor. Não existem níveis cadastrados."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Desenvolvedores"
+                ],
+                "summary": "Remove um desenvolvedor.",
+                "description": "Remove um desenvolvedor com base no ID fornecido.",
+                "operationId": "040653c8ff1d3f2c5137853a52abbc90",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do desenvolvedor a ser removido.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Desenvolvedor removido com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Registro removido com sucesso."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro ao tentar remover o desenvolvedor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Erro ao tentar remover o desenvolvedor."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/niveis": {
+            "get": {
+                "tags": [
+                    "Níveis"
+                ],
+                "summary": "Lista os níveis com paginação e busca.",
+                "description": "Retorna uma lista de níveis com suporte a paginação e busca por termo no campo 'nivel'.",
+                "operationId": "3e0cab0cd451c18e417adc4ec97700e2",
+                "parameters": [
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "Número de itens por página.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "default": 5
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Termo de busca para filtrar os níveis pelo campo 'nivel'.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista de níveis retornada com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "description": "ID do nível.",
+                                                        "type": "integer"
+                                                    },
+                                                    "nivel": {
+                                                        "description": "Nome do nível.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        },
+                                        "meta": {
+                                            "properties": {
+                                                "total": {
+                                                    "description": "Total de registros encontrados.",
+                                                    "type": "integer"
+                                                },
+                                                "current_page": {
+                                                    "description": "Página atual.",
+                                                    "type": "integer"
+                                                },
+                                                "per_page": {
+                                                    "description": "Número de itens por página.",
+                                                    "type": "integer"
+                                                },
+                                                "last_page": {
+                                                    "description": "Última página disponível.",
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Nenhum registro encontrado.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Nenhum registro encontrado."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Níveis"
+                ],
+                "summary": "Cria um novo nível.",
+                "description": "Cria um novo registro de nível com base nos dados fornecidos.",
+                "operationId": "5cd60b7b3a335d5a39362525e991c1c7",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nivel": {
+                                        "description": "Nome do nível.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Nível criado com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "description": "ID do nível criado.",
+                                                    "type": "integer"
+                                                },
+                                                "nivel": {
+                                                    "description": "Nome do nível criado.",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro de validação.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "object",
+                                            "additionalProperties": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/niveis/{id}": {
+            "put": {
+                "tags": [
+                    "Níveis"
+                ],
+                "summary": "Atualiza um nível existente.",
+                "description": "Atualiza os dados de um nível com base no ID fornecido.",
+                "operationId": "eca0ddf09523a27514b84b86a34697bd",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do nível a ser atualizado.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nivel": {
+                                        "description": "Nome atualizado do nível.",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Nível atualizado com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id": {
+                                                    "description": "ID do nível atualizado.",
+                                                    "type": "integer"
+                                                },
+                                                "nivel": {
+                                                    "description": "Nome atualizado do nível.",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Erro de validação.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "object",
+                                            "additionalProperties": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Níveis"
+                ],
+                "summary": "Remove um nível.",
+                "description": "Remove um nível com base no ID fornecido, desde que não existam desenvolvedores associados.",
+                "operationId": "a4dc1106a0af10df32efbd4631cdb9d1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do nível a ser removido.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Nível removido com sucesso."
+                    },
+                    "400": {
+                        "description": "Não é possível excluir o nível devido a desenvolvedores associados.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Não é possível excluir o nível. Existem desenvolvedores associados a ele."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Desenvolvedores",
+            "description": "Desenvolvedores"
+        },
+        {
+            "name": "Níveis",
+            "description": "Níveis"
+        }
+    ]
+}
