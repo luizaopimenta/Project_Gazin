@@ -1,4 +1,3 @@
-
 services:
   pgsql:
     container_name: postgres
