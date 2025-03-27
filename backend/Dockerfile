@@ -5,20 +5,12 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git \
     curl \
-    wget \
-    libaio1 \
-    libonig-dev \
     libpng-dev \
-    zlib1g-dev \
-    vim \
-    zsh \
-    xclip \
-    procps \
-    rsync \
-    libpq-dev && \
-    apt-get autoremove --yes && \
-    rm -rf /var/lib/{apt,dpkg,cache,log} && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+    libonig-dev \
+    libpq-dev \
+    && docker-php-ext-install pdo pdo_pgsql pgsql mbstring exif pcntl bcmath gd sockets \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
@@ -29,7 +21,15 @@ WORKDIR /var/www/html
 
 COPY . ./
 
+RUN cp .env.example .env
+
 RUN composer install --no-dev --optimize-autoloader
+
+RUN php artisan key:generate
+
+RUN php artisan migrate --force
+
+RUN php artisan optimize
 
 EXPOSE 9000
 

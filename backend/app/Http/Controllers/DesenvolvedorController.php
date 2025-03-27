@@ -75,7 +75,13 @@ class DesenvolvedorController extends Controller
 
             if ($request->has('search')) {
                 $searchTerm = $request->query('search');
-                $desenvolvedorQuery->where('nome', 'like', '%' . $searchTerm . '%');
+                $desenvolvedorQuery->where('nome', 'ilike', '%' . $searchTerm . '%');
+            }
+
+            if($request->has('order')){
+                $orderTerm = $request->order;
+                $orderDirecion = $request->direction;
+                $desenvolvedorQuery->orderBy($orderTerm, $orderDirecion );
             }
 
             $desenvolvedor = $desenvolvedorQuery->paginate($perPage);
@@ -97,7 +103,7 @@ class DesenvolvedorController extends Controller
 
         }
 
-       
+
         /**
          * @OA\Post(
          *     path="/desenvolvedores",
@@ -143,7 +149,7 @@ class DesenvolvedorController extends Controller
  *                 example="Não é possível cadastrar desenvolvedor. Não existem níveis cadastrados."
  *             )
  *         )
- * 
+ *
  *     )
          * )
          */
@@ -216,11 +222,11 @@ class DesenvolvedorController extends Controller
  *                 example="Não é possível cadastrar desenvolvedor. Não existem níveis cadastrados."
  *             )
  *         )
- * 
+ *
  *     )
  * )
  */
- 
+
     public function update(Request $request, Desenvolvedor $desenvolvedor){
         try {
             $validatedData = $request->validate(DesenvolvedorValidate::validate(), DesenvolvedorValidate::message());

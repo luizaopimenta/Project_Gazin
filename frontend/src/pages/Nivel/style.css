@@ -1,0 +1,12 @@
+.mensagem {
+  background-color: #8b8ae1;
+  color: #fff;
+}
+
+#message {
+  color: #fff;
+}
+
+.action{
+  cursor: pointer;
+}

@@ -69,11 +69,17 @@ class NivelController extends Controller
     public function index(Request $request): jsonResponse
     {
         $perPage = $request->query('per_page', 5);
-        $nivelQuery = Nivel::query();
+        $nivelQuery = Nivel::query()->withCount('desenvolvedores');
 
         if($request->has('search')) {
             $searchTerm = $request->query('search');
-            $nivelQuery->where('nivel', 'like', '%' . $searchTerm . '%');
+            $nivelQuery->where('nivel', 'ilike', '%' . $searchTerm . '%');
+        }
+
+        if($request->has('order')){
+            $orderTerm = $request->order;
+            $orderDirecion = $request->direction;
+            $nivelQuery->orderBy($orderTerm, $orderDirecion );
         }
 
         $nivel = $nivelQuery->paginate($perPage);
@@ -252,7 +258,7 @@ class NivelController extends Controller
  *     )
  * )
  */
- 
+
     public function destroy(Nivel $nivel){
         try {
 
