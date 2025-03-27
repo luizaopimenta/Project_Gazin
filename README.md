@@ -2,6 +2,11 @@
 
 ## Teste Prático - Desafio FullStack
 
+## Baixe o Projeto do Repositório
+
+ * git clone https://github.com/luizaopimenta/Project_Gazin.git
+
+
 ## 1 ª Etapa
 
  * Acesse a raiz do projeto pelo terminal:
@@ -41,7 +46,9 @@ php artisan migrate
 ## 5 ª Execute os Testes
 
  * Execute os testes para se certificar que tudo esta funcionando:
+ 
 
+sed -i 's/\r$//' ./vendor/bin/pest
 
 ./vendor/bin/pest
 

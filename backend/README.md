@@ -2,6 +2,11 @@
 
 ## Teste Prático - Desafio FullStack
 
+## Baixe o Projeto do Repositório
+
+ * git clone https://github.com/luizaopimenta/Project_Gazin.git
+
+
 ## 1 ª Etapa
 
  * Acesse a raiz do projeto pelo terminal:
