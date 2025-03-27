@@ -27,8 +27,6 @@ RUN composer install --no-dev --optimize-autoloader
 
 RUN php artisan key:generate
 
-RUN php artisan migrate --force
-
 RUN php artisan optimize
 
 EXPOSE 9000
